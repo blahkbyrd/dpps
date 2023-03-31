@@ -1,6 +1,6 @@
-.App {
-  display: flex;
-  gap: 1rem;
+img {
+  max-width: 200px;
+  max-height: 400px;
 }
 
 .home, .infos, .contact, .planning {
