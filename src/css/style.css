@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  gap: 1rem;
+}
+
+.home, .infos, .contact, .planning {
+  min-height: 500px;
+  padding: 20px;
+}
