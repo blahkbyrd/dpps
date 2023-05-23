@@ -3,7 +3,7 @@ const Secondarybutton = (props) => {
     const action = props.action;
 
     return (
-        <button className="secondary-btn" onClick={action}>{content}</button>
+        <button className="btn secondary-btn" onClick={action}>{content}</button>
     )
 }
 

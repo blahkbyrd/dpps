@@ -1,10 +1,15 @@
+import Article from "../Article";
+
 const Textcard = (props) => {
     const title = props.title;
-    const content = props.content;
-    return(
-        <div className="text-catd">
-            <h2>{title}</h2>
-            <p>{content}</p>
+    return (
+        <div className="text-card">
+            <h4>{title}</h4>
+            <Article/>
+            <div className="button-plus">
+                <div className="line-plus"></div>
+                <div className="line-plus"></div>
+            </div>
         </div>
     )
 }

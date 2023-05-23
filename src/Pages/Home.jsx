@@ -1,30 +1,13 @@
 import Primarybutton from "../Components/Buttons/Primarybutton";
 import Secondarybutton from "../Components/Buttons/Secondarybutton";
-import Imagecard from "../Components/Cards/Imagecard";
 import Textcard from "../Components/Cards/Textcard";
 
-import eddu from "../Assets/images/eddu.JPG";
-import breizh from "../Assets/images/breizh.jpg";
-import macchiato from "../Assets/images/macchiato.jpg";
+import PictureStrip from "../Components/Cards/pictureStrip";
+
 
 const Home = () => {
-    const images_source = [{
-        id:0,
-        alternative:"chien",
-        src: eddu
-    },
-    {
-        id:1,
-        alternative:"lapin",
-        src:breizh
-    },
-    {
-        id:2,
-        alternative:"lapin",
-        src:macchiato
-    }
-    ]
-    const content = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, aut, voluptatum, dignissimos porro corporis adipisci deserunt distinctio modi vel odio tempora unde culpa dolorem voluptatem cumque? Excepturi optio quia minus!"
+    const title = "Qu’est - ce que la médiation par l’animal ?"
+  
 
     const action_1 = () => {
         console.log("click !");
@@ -35,22 +18,21 @@ const Home = () => {
     }
 
     return (
-        <div className="home" id="home">
-            <aside className="image-container" >
-                <ul>{
-                    images_source.map(element =>{
-                       return (<li key={element.id}><Imagecard source={element.src} alternative={element.alternative}/></li>)
-                    })
-                }
-                </ul>
-            </aside>
-            <main>
-                <Textcard title="Titre" content={content} />
-                <div className="button-container">
-                    <Primarybutton action={action_1} content="+ d'infos" />
-                    <Secondarybutton action={action_2} content="prendre rdv" />
+        <div className=" page home" id="home">
+            <aside >
+                <div className="strips-container">
+                    <PictureStrip  />
+                    <PictureStrip  />
+                    <PictureStrip  />
                 </div>
-            </main>
+            </aside>
+            <article>
+                <Textcard title={title} />
+            </article>
+            <div className="button-container">
+                <Primarybutton action={action_1} content="+ d'infos" />
+                <Secondarybutton action={action_2} content="prendre rdv" />
+            </div>
         </div>
     )
 }
