@@ -8,7 +8,7 @@ const Footer = () => {
            <section className="top">
                <div className="brand">
                 <div className="brand-name">
-                    <Logo/>
+                    <Logo color="creme"/>
                     <p>Médiation par l'animal</p>
                 </div>
                 <ul className="contact-infos">
@@ -49,28 +49,3 @@ const Footer = () => {
 
 export default Footer;
 
-/**
- * 
- *  <ul>
-                <li><a href="/mentions-legales" target="_blank" rel="noreferrer">mentions légales</a></li>
-                <li>CGU</li>
-                <li>site réalisé par <a href="https://github.com/blahkbyrd" rel="noreferrer" target="_blank">Blahkbyrd</a></li>
-            </ul>
-            <ul>
-                <li>accueil</li>
-                <li>infos</li>
-                <li>nos animaux</li>
-                <li>contact</li>
-                <li><a href="#" rel="noreferrer" target="_blank">nous rejoindre</a></li>
-            </ul>
-            <ul>
-                <li><a href="mailto:despatounespourunsourire@gmail.com">despatounespourunsourire@gmail.com</a></li>
-                <li>2 rue des Vergnes, 85600 Montaigu-Vendée</li>
-                <li>06 75 43 27 16</li>
-            </ul>
-            <ul>
-                <li>Des Patounes Pour un Sourire</li>
-                <li>Formée par l'institut <a href="http://www.agatea.org/" rel="noreferrer" target="_blank">AGATEA</a></li>
-                <li>SIRET : 92321360800016</li>
-            </ul>
- */

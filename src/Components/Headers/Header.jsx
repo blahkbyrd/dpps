@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="brand-identity-container">
-                <Logo />
+                <Logo color="bleu" />
                 <Banner />
                 <Hamburger/>
             </div>
