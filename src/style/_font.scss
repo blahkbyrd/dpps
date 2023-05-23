@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Nova+Square&display=swap');
+@import url("https://use.typekit.net/kzq0jph.css");
+
+
+.App {
+    font-family: "cairo", sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Bree", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: $h1-mob;
+    letter-spacing: 3%;
+    line-height: 8px;
+}
+
+h2 {
+    font-size: $h2-mob;
+}
+
+h3 {
+    font-size: $h3-mob;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: $h4-mob;
+    padding-block: $space-16 ;
+}
+
+h5 {
+    font-size: $h5-mob;
+    font-weight: 200;
+}
+
+h6 {
+    font-size: $parag-mob;
+}
+
+p {
+    font-size: $paragaraphe;
+
+    &.strong{
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width:1320px){
+    h1 {
+        font-size: $h1;
+        letter-spacing: 3%;
+        line-height: 8px;
+    }
+    
+    h2 {
+        font-size: $h2;
+    }
+    
+    h3 {
+        font-size: $h3;
+        font-weight: 700;
+    }
+    
+    h4 {
+        font-size: $h4;
+        padding-block: $space-16 ;
+    }
+    
+    h5 {
+        font-size: $h5;
+        font-weight: 200;
+    }
+    
+    h6 {
+        font-size: $h6;
+    }
+}

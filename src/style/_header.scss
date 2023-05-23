@@ -1,0 +1,59 @@
+.header {
+    background-color: $bg-very-dark;
+    padding: $space-16;
+    color: $black-5;
+    .brand-identity-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space-16;
+    }
+}
+
+.banner {
+    .baseline {
+        @include cairo-light;
+        font-size: $paragaraphe;
+        font-style: normal;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    .brand-name{
+        padding-inline: $space-16;
+        margin-bottom: $space-12;
+        font-size: $h4-mob;
+        text-align: center;
+        line-height: 25px;
+        font-style: italic;
+        letter-spacing: 1px;
+    }
+}
+
+.logo-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        width: 80px;
+        height: auto;
+        filter: brightness(177%) 
+    }
+
+    .brand-name {
+        display: none;
+    }
+}
+
+.hamburger-menu{
+    width: $scale-48;
+}
+.line.gradient {
+    display: none;
+}
+
+.navbar {
+    display: none;
+}

@@ -1,0 +1,48 @@
+.gallery-activity {
+    background-color: $bg-light;
+    color: $black;
+
+    .image-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        gap:$space-8;
+
+        .image-container{
+            display: grid;
+            grid-template-rows: min-content;
+            gap: $space-8;
+            padding: $space-16;
+            margin-bottom: $space-8;
+            background-color: $bg-dark;
+            color:$black-5;
+            border-radius: 8px;
+        }
+       
+    }
+    .horizontal-scroll{
+        overflow-x: auto ;        
+        overscroll-behavior-inline: contain;
+        scrollbar-color: $bg-dark $bg-light;
+        scrollbar-gutter: stable;
+        scroll-behavior:smooth;
+        scroll-snap-type: inline mandatory;
+    }
+
+    .horizontal-scroll > *{
+        scroll-snap-align: start;
+        &:last-child{
+            scroll-snap-align: end;
+        }
+    }
+
+    .picture-legend {
+        display: none;
+    }
+
+    .tab{
+        display: none;
+    }
+
+    
+}

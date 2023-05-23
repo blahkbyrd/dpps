@@ -1,0 +1,40 @@
+@mixin col-flex-small-space {
+    display: flex;
+    flex-direction: column;
+    gap: $space-16;
+}
+@mixin grid-2col-base-space {
+    display: grid;
+    gap:$base-space;
+    grid-template-columns: repeat(2,1fr);
+}
+@mixin bree-bold($font-size) {
+    font-weight: 600;
+    font-family: "Bree", sans-serif;
+    font-size: $font-size;
+}
+
+@mixin cairo-light{
+    font-family: "cairo", sans-serif;
+    font-weight: 200;
+}
+
+// Flip card
+@mixin flip-card-inner{
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flip-card-back-front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+@mixin flip-card-back{
+    transform: rotateY(180deg);
+}
+@mixin flip-card-front{}

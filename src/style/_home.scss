@@ -1,0 +1,71 @@
+.home {
+    background-image: $gradient-background-mobile;
+    
+
+
+    .text-card {
+        color: $black-5;
+        position: relative;
+       
+    }
+    .article-container {
+
+        p:nth-child(2),
+        p:nth-child(3),
+        ul,
+        .strong {
+            display: none;
+        }
+    }
+
+    .button-plus {
+        width: $scale-32;
+        height: $scale-32;
+        border-radius: 50%;
+        background-color: $primary;
+        margin: $space-8;
+        position: absolute;
+        bottom: -35px;
+        right: -35px;
+        transform: translate(-50%, -50%);
+
+        .line-plus {
+            position: absolute;
+            width: $scale-16;
+            height: 4px;
+            background-color: $black-5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:last-child {
+                transform: translate(-50%, -50%) rotateZ(90deg);
+            }
+        }
+
+        &:hover {
+            .line-plus {
+                left: 45%;
+                scale: 0.9;
+            }
+        }
+    }
+
+    .button-container {
+        margin-top: $base-space;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-32;
+        justify-content: center;
+    }
+
+    
+}
+
+.btn {
+    width: $scale-104;
+    padding-inline: $space-16;
+    padding-block: $space-8;
+}

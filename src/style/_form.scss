@@ -1,0 +1,35 @@
+.form-container{
+    form{
+       @include col-flex-small-space;
+      
+    }
+
+    .btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: $space-12;
+        gap: $space-12;
+        
+        .btn{
+            margin: 0;
+            font-size: $h4-mob;
+        }
+    }
+
+    label{
+        @include bree-bold($h4-mob);
+    }
+    textarea, input, select{
+        border:none;
+        background-color: $black-5;
+        border-radius: 8px;
+        font-family: "cairo", sans-serif;
+        padding: $space-8;
+        font-size: $parag-mob;
+    }
+    input, select {
+        min-height: $scale-48;
+    }
+   
+}
