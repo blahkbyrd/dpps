@@ -1,0 +1,77 @@
+.footer {
+    color: $black-5;
+    background-color: $bg-sticker-dark;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: $space-8;
+
+    a {
+        color: $black-5;
+    }
+
+    .contact-infos a {
+        color: lighten($primary, $amount: 50%);
+    }
+
+    .logo-container {
+        margin: $space-12 auto;
+    }
+
+    .brand {
+        margin-block: $space-32;
+        text-align: center;
+    }
+
+    .brand-name {
+        margin-block: $space-12;
+    }
+
+    .sticker-container {
+        background-color: $bg-light;
+        color: $black;
+    }
+
+    .site-map ul {
+        margin: $space-16;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $space-16;
+        text-transform: uppercase;
+        font-weight: 800;
+        li {
+            position: relative;
+            padding-inline: $space-4;
+        }
+
+        li::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 80%;
+            transform: translate(-50%);
+            left: 110%;
+            background-color: $bg-sticker-light;
+        }
+    }
+    .bottom{
+        text-align: center;
+        display: flex;
+        gap: $space-12;
+        flex-direction: column;
+        a{
+            color: lighten($primary, $amount: 50%);
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        ul:nth-child(2){
+            margin: $space-12;
+            color: lighten($primary, $amount: 50%);
+            // text-transform: uppercase;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

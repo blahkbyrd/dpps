@@ -1,0 +1,394 @@
+@media screen and (min-width:1300px) {
+    .App {
+        font-size: 1.1em;
+    }
+
+    // HEADER 
+    .header {
+        background-color: transparent;
+        color: $black;
+
+        .brand-identity-container {
+            justify-content: space-evenly;
+            gap: $base-space;
+        }
+    }
+
+    .banner {
+        .baseline {
+            font-size: $h2;
+        }
+
+        .brand-name {
+            display: none;
+        }
+    }
+
+    .logo-container {
+
+        .logo {
+            width: 150px;
+            filter: none;
+        }
+
+        .brand-name {
+            display: block;
+            font-family: 'Bree', sans-serif;
+            font-size: $h6;
+            font-style: italic;
+            font-weight: 800;
+            text-align: center;
+        }
+    }
+
+    .line.gradient {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+
+        height: 2px;
+        background: linear-gradient(to right, #198060 0%, #32a7ca 100%)
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar {
+        display: block;
+        position: relative;
+
+        ul {
+            position: absolute;
+            width: 50%;
+            top: 0px;
+            right: $space-32;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+
+            font-family: "cairo", sans-serif;
+            font-weight: 700;
+            font-size: 1.77em;
+            font-style: italic;
+        }
+    }
+
+    // HOME PAGE
+
+    .home {
+        margin-top: $space-32;
+        background-image: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: $space-16;
+        padding-block: $base-space;
+
+        aside {
+            transform: rotateZ(-15deg);
+            grid-row: 1/4;
+            margin-left: -$base-space;
+        }
+
+        article {
+            border-radius: 10px;
+            background-image: $gradient-to-right;
+            grid-column: 2/4;
+        }
+
+        .text-card {
+            color: $black;
+            border-radius: 8px;
+            background-color: #fff;
+            padding-inline: $space-16;
+            margin: 4px;
+        }
+
+        .article-container {
+
+            p,
+            ul,
+            .strong {
+                display: block;
+            }
+        }
+
+        .strong {
+            text-align: center;
+            margin-bottom: $space-16;
+        }
+
+        .button-container {
+            grid-column: 2/4;
+            grid-row: 3;
+        }
+
+        .button-plus {
+            scale: 2;
+            bottom: -20px;
+            right: -20px;
+        }
+
+    }
+
+    .strips-container {
+        opacity: 1;
+        transform: rotateZ(0deg);
+    }
+
+    .strip-container {
+        scale: 1.1;
+    }
+
+    // ACTIVITY PAGE
+    .gallery-activity {
+        background-color: $bg-dark;
+        color: $black-5;
+
+        .gallery-tab-container {
+            margin-block: $space-16;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+        }
+
+        .image-container {
+            display: flex !important;
+            transition: all 1s ease;
+            flex: 1;
+        }
+
+        .image-grid {
+            display: flex;
+            height: $scale-512;
+            flex-wrap: nowrap;
+            padding-inline: $space-32;
+            grid-column: 6/13;
+            grid-row: 1/6;
+
+            .legend {
+                display: none;
+            }
+        }
+
+        .image-card {
+            overflow: hidden;
+            border-radius: 16px;
+            opacity: 0.5;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .image-container.active .image-card {
+            flex: 4;
+            opacity: 1;
+        }
+
+        .image-container.active {
+            flex: 4;
+        }
+
+        .picture-legend {
+            display: block;
+            grid-column: 2/6;
+            grid-row: 2/5;
+            align-self: center;
+            position: relative;
+
+            .legend {
+                position: absolute;
+                scale: 0;
+                font-size: $h4;
+                transform: translateY(-50%);
+
+                &.active {
+                    transition: scale 1s ease;
+                    scale: 1
+                }
+            }
+        }
+
+
+
+        .tab {
+            display: block;
+            grid-column: 1/13;
+            grid-row: 6;
+            text-align: center;
+            position: relative;
+            width: fit-content;
+            margin: auto;
+
+            button {
+                @include bree-bold($h4);
+                cursor: pointer;
+
+                text-align: center;
+                display: inline-block;
+                border: none;
+
+                color: $black-5;
+                background-color: transparent;
+                padding-inline: $space-32;
+                margin-bottom: $space-8;
+                padding-top: $space-8;
+
+
+                &.active~.tab-line {
+                    opacity: 1;
+
+                }
+
+                &:nth-child(1).active~.tab-line {
+                    left: 0;
+                }
+
+                &:nth-child(2).active~.tab-line {
+                    left: 33%;
+                }
+
+                &:nth-child(3).active~.tab-line {
+                    left: 66%;
+                }
+            }
+
+            .tab-line {
+                position: absolute;
+                content: "";
+                width: 33%;
+                height: 5px;
+                left: 0%;
+                bottom: 5%;
+                background-color: $primary;
+                opacity: 0;
+                transition: left 1s ease;
+            }
+        }
+    }
+
+    // INFOS PAGE
+    .infos {
+        .intro-container {
+           
+            flex-direction: row;
+        }
+        .intro-illustration{
+            width: 50%;
+            object-fit: contain;
+        }
+
+        .article-container {
+            margin-block: $base-space;
+            margin-left: $space-32;
+        }
+
+        h4 {
+            font-size: $h4;
+            padding-left: $space-16;
+        }
+
+
+        .image-center-layout-container {
+            margin-bottom: $base-space;
+            background: none;
+            height: fit-content;
+            perspective: 1000px;
+            .parent {
+                position: relative;
+                margin-block: 0;
+
+            }
+
+            img {
+                display: block;
+                z-index: -1;
+                opacity: 1;
+                width: 40%;
+                position: absolute;
+                left: 75%;
+                top: 60%;
+                max-width: 400px;
+                transform-style:preserve-3d;
+                transform: translate(-50%, -50%) rotateY(-30deg);
+                box-shadow: $box-shadow-50;
+            }
+
+            .intro {
+                margin-block: 0;
+                padding: $space-32;
+                margin-inline-start: $space-12;
+                font-size: $h6;
+                font-weight: 600;
+                width:55%;
+            }
+
+
+
+            .children {
+                padding-left: $base-space;
+                margin-block: $space-16;
+
+                h5 {
+                    font-size: $h5;
+                    text-align: start;
+                }
+            }
+        }
+    }
+    .cta-contact{
+        margin: $base-space;
+        p{
+            font-size: $h1-mob;
+            font-family: bree;
+            text-align: center;
+            margin: $space-8;
+        }
+        grid-row: 3;
+        grid-column: 1/6;
+    }
+    .card-grid-layout-container {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    // GALLERY ANIMALS PAGE
+    .gallery-animals {
+        //background-color: $bg-dark;
+        // color:$black-5;
+
+        .gallery-animals-container {
+            margin-top: $base-space;
+            // @include grid-2col-base-space;
+        }
+    }
+
+    .drop-down-article-container h4:after {
+
+        width: 2rem;
+        border-top: 8px solid $primary;
+        border-left: 8px solid $primary;
+        left: 80%;
+    }
+
+    // CONTACT PAGE
+    .contact{
+        margin-inline: $base-space;
+        .contact-content {
+            display: flex;
+            gap:$base-space;
+        }
+        .form-container{
+            flex: 2;
+        }
+        .sticker-container{
+            flex: 1;
+        }
+    }
+
+}

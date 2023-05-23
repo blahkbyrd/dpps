@@ -1,0 +1,59 @@
+.sticker-container {
+    border-radius: 20px;
+    background-color: $bg-sticker-dark;
+    color: $black-5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // height:50%;
+    margin: $space-32;
+    flex: 1;
+    box-shadow: $box-shadow-brown;
+
+    span {
+        font-size: $h5;
+        font-family: "bree", sans-serif;
+    }
+
+    h4 {
+        font-size: $h2-mob;
+    }
+
+    .btn-container {
+        position: relative;
+        isolation: isolate;
+        padding-top: $space-16;
+        padding-bottom: $base-space;
+    }
+
+    .secondary-btn {
+        padding-inline: $base-space;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .icon {
+        position: absolute;
+        aspect-ratio: 1;
+        object-fit: contain;
+
+        &:first-of-type {
+            width: $scale-80;
+            left: -30%;
+            transform: rotateZ(-35deg);
+        }
+
+        &:last-of-type {
+            width: $scale-64;
+            left: 95%;
+            top: 20%;
+            z-index: -1;
+            transform: rotateZ(30deg);
+        }
+    }
+
+    p {
+        margin: $space-16;
+        font-size: $h6;
+    }
+}

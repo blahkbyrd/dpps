@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-light;
+}
+
+.App {
+    font-family: "Cairo", sans-serif;
+    color: $black;
+}
+
+.page {
+    padding-inline: $space-32;
+    margin-bottom: $base-space;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3 {
+    margin-block: $space-32 ;
+    //padding-top: $base-space;
+}
+
+.article-container {
+    @include col-flex-small-space;
+
+    li img {
+        width: 30px;
+        padding: $space-4;
+        transform: translate(40%, 25%) rotateZ(45deg);
+        opacity: 0.4;
+        z-index: -1;
+
+    }
+}
+
+.btn {
+    margin-inline: $base-space;
+    padding-inline: $space-16;
+    padding-block: $space-8;
+    font-size: $h5;
+    font-family: 'Bree', sans-serif;
+    font-weight: 700;
+    border-radius: 16px;
+    border: none;
+    box-shadow: $box-shadow-50;
+}
+
+.primary-btn {
+    background-color: $primary;
+    color: $black-5;
+}
+
+.secondary-btn {
+    background-color: $black-5;
+    color: $primary;
+}
+
+.cancel-btn {
+    background-color: $error;
+    color: $black-5;
+}
