@@ -1,12 +1,37 @@
+
+
 .header {
+   
+    position: sticky;
+    z-index: 10;
+    top:0;
     background-color: $bg-very-dark;
     padding: $space-16;
     color: $black-5;
+    transition: all 1s ease;
     .brand-identity-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: $space-16;
+    }
+}
+
+.header.small{
+  
+    padding: $space-8;
+    .brand-identity-container{
+        justify-content: space-between;
+    }
+    .hamburger-menu{
+        width: $scale-40;
+        gap:3px;
+    }
+    .hamburger-menu div{
+       height: 4px;
+    }
+    .logo-container img{
+        width: 40px;
     }
 }
 
@@ -48,7 +73,9 @@
 }
 
 .hamburger-menu{
-    width: $scale-48;
+   
+    width: $scale-64;
+    align-items: flex-end;
 }
 .line.gradient {
     display: none;

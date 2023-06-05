@@ -1,4 +1,4 @@
-@media screen and (min-width:1300px) {
+@media (min-width:1300px) {
     .App {
         font-size: 1.1em;
     }
@@ -9,12 +9,37 @@
 
     // HEADER 
     .header {
+
         background-color: transparent;
         color: $black;
+        transition: all 1s ease;
 
         .brand-identity-container {
             justify-content: space-evenly;
             gap: $base-space;
+        }
+    }
+
+    .header.small {
+        height: fit-content;
+        max-height: 80px;
+        padding-block: $space-16;
+
+        background-color: $bg-light;
+
+        span {
+            display: none;
+        }
+
+        .navbar {
+            position: inherit;
+        }
+
+        ul{
+            top:50%;
+        }
+        .line.gradient{
+            top:1em;
         }
     }
 
@@ -50,7 +75,6 @@
         position: relative;
         top: 0;
         left: 0;
-
         height: 2px;
         background: linear-gradient(to right, #198060 0%, #32a7ca 100%)
     }
@@ -98,8 +122,10 @@
 
         article {
             border-radius: 10px;
-            background-image: $gradient-to-right;
+            background-image: linear-gradient(to right, #198060 0%, #117695 100%);
             grid-column: 2/4;
+            grid-row: 2/4;
+            height: fit-content;
         }
 
         .text-card {
@@ -107,6 +133,7 @@
             border-radius: 8px;
             background-color: #fff;
             padding-inline: $space-16;
+            padding-block: $space-32;
             margin: 4px;
         }
 
@@ -130,7 +157,7 @@
         }
 
         .button-plus {
-            scale: 2;
+            scale: 1.2;
             bottom: -20px;
             right: -20px;
         }
@@ -157,8 +184,6 @@
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            //grid-template-rows: 50px 100px 100px 100px 50px 50px;
-
         }
 
         .image-container {
@@ -484,4 +509,14 @@
 
 
 
+}
+
+@media screen and (min-width:1800px) {
+    aside {
+        grid-row: 2/4 !important;
+    }
+
+    .strip-container {
+        scale: 1.2;
+    }
 }

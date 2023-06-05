@@ -43,7 +43,7 @@ const GalleryActivity = () => {
                             return (
                                 <div onClick={(e) => handleClick(elem.id, e)} className="image-container">
                                     <Imagecard key={elem.id} name={elem.name} source={elem.src} alternative={elem.alternative} />
-                                    <p key={elem.id} className="legend">{elem.legend}</p>
+                                    <p key={(elem.id+1)*10} className="legend">{elem.legend}</p>
                                 </div>
                             )
                         })
@@ -53,7 +53,7 @@ const GalleryActivity = () => {
                     {
                         images_list.map(elem => {
                             return (
-                                <p key={elem.id} className="legend">{elem.legend}</p>
+                                <p key={(elem.id+1)*3} className="legend">{elem.legend}</p>
                             )
                         })
                     }
@@ -62,7 +62,7 @@ const GalleryActivity = () => {
                     {
                         images_list.map(elem => {
                             return (
-                                <button key={elem.id} onClick={(e) => handleClick(elem.id, e)}>{elem.id + 1}</button>
+                                <button key={(elem.id+1)*4} onClick={(e) => handleClick(elem.id, e)}>{elem.id + 1}</button>
                             )
                         })
                     }

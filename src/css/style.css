@@ -265,6 +265,7 @@ h3 {
   border-radius: 16px;
   border: none;
   box-shadow: 4px 4px 4px 2px #a3acb0;
+  height: fit-content;
 }
 
 .primary-btn {
@@ -280,6 +281,11 @@ h3 {
 .cancel-btn {
   background-color: #CC3737;
   color: #ffffff;
+}
+
+.observer {
+  position: absolute;
+  top: 20vh;
 }
 
 img {
@@ -337,15 +343,36 @@ img {
 }
 
 .header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
   background-color: #0E333F;
   padding: 16px;
   color: #ffffff;
+  transition: all 1s ease;
 }
 .header .brand-identity-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+.header.small {
+  padding: 8px;
+}
+.header.small .brand-identity-container {
+  justify-content: space-between;
+}
+.header.small .hamburger-menu {
+  width: 2.5em;
+  gap: 3px;
+}
+.header.small .hamburger-menu div {
+  height: 4px;
+}
+.header.small .logo-container img {
+  width: 40px;
 }
 
 .banner .baseline {
@@ -383,7 +410,8 @@ img {
 }
 
 .hamburger-menu {
-  width: 3.0769230769em;
+  width: 4em;
+  align-items: flex-end;
 }
 
 .line.gradient {
@@ -1155,7 +1183,7 @@ h4.active:after {
   justify-content: space-evenly;
 }
 
-@media screen and (min-width: 1300px) {
+@media (min-width: 1300px) {
   .App {
     font-size: 1.1em;
   }
@@ -1165,10 +1193,29 @@ h4.active:after {
   .header {
     background-color: transparent;
     color: #272B2D;
+    transition: all 1s ease;
   }
   .header .brand-identity-container {
     justify-content: space-evenly;
     gap: 64px;
+  }
+  .header.small {
+    height: fit-content;
+    max-height: 80px;
+    padding-block: 16px;
+    background-color: #F2EBE5;
+  }
+  .header.small span {
+    display: none;
+  }
+  .header.small .navbar {
+    position: inherit;
+  }
+  .header.small ul {
+    top: 50%;
+  }
+  .header.small .line.gradient {
+    top: 1em;
   }
   .banner .baseline {
     font-size: 3.12em;
@@ -1234,12 +1281,15 @@ h4.active:after {
     border-radius: 10px;
     background-image: linear-gradient(to right, #198060 0%, #117695 100%);
     grid-column: 2/4;
+    grid-row: 2/4;
+    height: fit-content;
   }
   .home .text-card {
     color: #272B2D;
     border-radius: 8px;
     background-color: #fff;
     padding-inline: 16px;
+    padding-block: 32px;
     margin: 4px;
   }
   .home .article-container p,
@@ -1256,7 +1306,7 @@ h4.active:after {
     grid-row: 3;
   }
   .home .button-plus {
-    scale: 2;
+    scale: 1.2;
     bottom: -20px;
     right: -20px;
   }
@@ -1525,5 +1575,13 @@ h4.active:after {
   .footer .bottom p:last-child {
     grid-row: 2;
     grid-column: 1/8;
+  }
+}
+@media screen and (min-width: 1800px) {
+  aside {
+    grid-row: 2/4 !important;
+  }
+  .strip-container {
+    scale: 1.2;
   }
 }
