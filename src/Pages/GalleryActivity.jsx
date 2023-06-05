@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Imagecard from "../Components/Cards/Imagecard";
 import { images_list } from "../data/gallery_data";
-import { changeClassOfNodeElement} from "../utils_func/utils";
+import { changeClassOfNodeElement } from "../utils_func/utils";
 
 
 const GalleryActivity = () => {
@@ -9,29 +9,41 @@ const GalleryActivity = () => {
 
     const tabs_legend = useRef(null);
     const tabs_image = useRef(null);
+    const tab_id = useRef(null);
 
-    const handleClick = (id, e) => {
-       
-        // change class of mapped elements
+    const activePicture = (id) => {
         let current_legend = tabs_legend.current.childNodes;
         let current_image = tabs_image.current.childNodes;
-        let targetSibbling = e.target.parentNode.childNodes;
-        console.log(current_image);
+        let tab = tab_id.current.childNodes;
+
+
         changeClassOfNodeElement(current_legend, current_legend[id], "active");
         changeClassOfNodeElement(current_image, current_image[id], "active");
-        changeClassOfNodeElement(targetSibbling, e.target, "active");
+        changeClassOfNodeElement(tab, tab[id], "active");
+
     }
+
+    useEffect(() => {
+        // let tab = tab_id.current.childNodes;
+        activePicture(0);
+        // changeClassOfNodeElement(tab, tab[0], "active");
+    }, [])
+
+    const handleClick = (id, e) => {
+        activePicture(id)
+    }
+
     return (
         <div className=" page gallery-activity">
             <h3>Quelques activités</h3>
             <div className="gallery-tab-container">
-                <div ref={tabs_image} className="image-grid horizontal-scroll"> 
+                <div ref={tabs_image} className="image-grid horizontal-scroll">
                     {
                         images_list.map(elem => {
                             return (
                                 <div onClick={(e) => handleClick(elem.id, e)} className="image-container">
-                                <Imagecard key={elem.id} name={elem.name} source={elem.src} alternative={elem.alternative} />
-                                <p key={elem.id} className="legend">{elem.legend}</p>
+                                    <Imagecard key={elem.id} name={elem.name} source={elem.src} alternative={elem.alternative} />
+                                    <p key={elem.id} className="legend">{elem.legend}</p>
                                 </div>
                             )
                         })
@@ -46,7 +58,7 @@ const GalleryActivity = () => {
                         })
                     }
                 </div>
-                <div className="tab">
+                <div className="tab" ref={tab_id}>
                     {
                         images_list.map(elem => {
                             return (
