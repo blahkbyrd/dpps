@@ -336,16 +336,6 @@ img {
   border-radius: 5%;
 }
 
-.image-center-layout-container img {
-  width: 250px;
-  aspect-ratio: 1;
-  object-fit: contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .header {
   background-color: #0E333F;
   padding: 16px;
@@ -504,17 +494,14 @@ h4.active:after {
 }
 
 .image-center-layout-container {
-  position: relative;
   padding-inline: 8px;
   padding-block: 16px;
   margin: 8px;
-  background-image: url("../../src/Assets/images/public_bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  background-color: rgba(25, 128, 96, 0.1);
+  display: grid;
 }
 .image-center-layout-container .intro {
+  grid-row: 1;
+  grid-column: 1/6;
   border: 3px solid #198060;
   border-radius: 25px;
   background-color: #ffffff;
@@ -523,17 +510,22 @@ h4.active:after {
 .image-center-layout-container h5 {
   text-align: justify;
 }
+.image-center-layout-container .parent {
+  padding-bottom: 16px;
+  grid-row: 2;
+  grid-column: 1/5;
+}
 .image-center-layout-container .children {
-  margin: 8px;
+  margin: 16px;
 }
 .image-center-layout-container img {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
-  width: 70%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  display: none;
+  grid-row: 2;
+  grid-column: 4/6;
+  align-self: self-end;
+  justify-self: end;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .falling-bubble-layout-container {
@@ -1408,12 +1400,13 @@ h4.active:after {
     opacity: 1;
     width: 40%;
     position: absolute;
-    left: 75%;
-    top: 60%;
+    left: 70%;
+    top: 40%;
     max-width: 400px;
     transform-style: preserve-3d;
     transform: translate(-50%, -50%) rotateY(-30deg);
     box-shadow: 4px 4px 4px 2px #a3acb0;
+    z-index: 1;
   }
   .infos .image-center-layout-container .intro {
     margin-block: 0;
@@ -1424,6 +1417,7 @@ h4.active:after {
     width: 55%;
   }
   .infos .image-center-layout-container .children {
+    z-index: -1;
     padding-left: 64px;
     margin-block: 16px;
   }
@@ -1468,11 +1462,14 @@ h4.active:after {
   .contact .sticker-container {
     flex: 1;
   }
+  .footer {
+    overflow-x: hidden;
+    padding: 32px;
+  }
   .footer .top {
     display: flex;
     align-items: center;
-    gap: 32px;
-    margin: 32px;
+    justify-content: space-between;
   }
   .footer .site-map ul {
     flex-direction: column;
@@ -1490,6 +1487,10 @@ h4.active:after {
   .footer .sticker-container {
     flex: 1;
     transform: rotate(10deg);
+    margin: 0;
+  }
+  .footer .brand {
+    flex: 1;
   }
   .footer .site-map {
     flex: 2;

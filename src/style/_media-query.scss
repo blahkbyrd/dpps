@@ -313,12 +313,13 @@
                 opacity: 1;
                 width: 40%;
                 position: absolute;
-                left: 75%;
-                top: 60%;
+                left: 70%;
+                top: 40%;
                 max-width: 400px;
                 transform-style: preserve-3d;
                 transform: translate(-50%, -50%) rotateY(-30deg);
                 box-shadow: $box-shadow-50;
+                z-index: 1;
             }
 
             .intro {
@@ -333,6 +334,7 @@
 
 
             .children {
+                z-index: -1;
                 padding-left: $base-space;
                 margin-block: $space-16;
 
@@ -401,11 +403,12 @@
     }
 
     .footer {
+        overflow-x: hidden;
+        padding: $space-32;
         .top {
             display: flex;
             align-items: center;
-            gap: $space-32;
-            margin: $space-32;
+           justify-content: space-between;   
         }
 
         .site-map ul {
@@ -427,8 +430,11 @@
         .sticker-container {
             flex: 1;
             transform: rotate(10deg);
+            margin: 0;
         }
-
+        .brand{
+            flex:1;
+        }
         .site-map {
             h5{
                 font-size: $h4;
