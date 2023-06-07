@@ -1,0 +1,80 @@
+img {
+    object-fit: cover;
+}
+
+
+// HOME PAGE
+.strips-container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    opacity: 0.3;
+    transform: rotateZ(-20deg);
+    z-index: 0;
+    isolation: isolate;
+}
+
+.strip-container {
+    scale: 0.8;
+    width: $scale-140;
+    padding: $space-8;
+    padding-bottom: $space-32;
+    box-shadow: $box-shadow-75;
+    background-color: $black-5;
+    position: absolute;
+
+
+    &:first-child {
+        transform: rotateZ(-12deg);
+    }
+
+    &:nth-child(2) {
+        transform: rotateZ(-4deg);
+    }
+
+    &:last-child {
+        transform: rotateZ(4deg);
+    }
+}
+
+.strip-image {
+    padding-top: $space-8;
+
+    img {
+        width: 100%;
+        height: $scale-140;
+    }
+}
+
+
+// ACTIVITIES PAGE
+.gallery-tab-container .image-grid {
+    .image-card {
+        width: fit-content;        
+    }
+    img{
+         width: 100%;
+    }
+
+}
+
+
+
+// ANIMALS PAGE
+.animal-pres-container img {
+    width: 215px;
+    aspect-ratio: 4/3;
+    border-radius: 5%;
+}
+
+
+// INFO PAGES
+.image-center-layout-container img {
+    // width: 250px;
+    // aspect-ratio: 1;
+    // object-fit: contain;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+}

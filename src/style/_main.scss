@@ -55,6 +55,7 @@ h3 {
     border-radius: 16px;
     border: none;
     box-shadow: $box-shadow-50;
+    height: fit-content;
 }
 
 .primary-btn {
@@ -70,4 +71,9 @@ h3 {
 .cancel-btn {
     background-color: $error;
     color: $black-5;
+}
+
+.observer{
+    position: absolute;
+    top:20vh;
 }
