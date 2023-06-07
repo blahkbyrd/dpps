@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footers/Footer";
+import Header from "./Components/Headers/Header";
+import Layout from "./Components/Layouts/Layout";
+import Legacy from "./Pages/Legacy";
+import { useInView } from "react-intersection-observer";
+
+
+import "./css/style.css";
+import { useEffect, useState } from "react";
+
 
 function App() {
+
+ 
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    trackVisibility: true,
+    delay:3000,
+  });
+
+
+  const handleChange = (inView, entry) =>{
+    console.log('InView ', inView);
+    console.log('entry ', entry);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div onChange={() => handleChange(inView, entry)} ref={ref}><p className="observer">{inView}</p></div>
+
+      <BrowserRouter>
+
+        <Header size={inView ? "regular" : "small"} />
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/mentions-legales" element={<Legacy />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
